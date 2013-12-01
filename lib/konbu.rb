@@ -1,12 +1,7 @@
-$LOAD_PATH << (File.dirname(__FILE__))
+$LOAD_PATH << File.expand_path('../konbu/', __FILE__)
 
-require 'konbu/op'
-require 'konbu/basic_operation'
-require 'konbu/parser'
-require 'konbu/add'
-require 'konbu/sub'
-require 'konbu/mul'
-require 'konbu/div'
+require 'op'
+require 'parser'
 
 module Konbu
 

@@ -1,3 +1,11 @@
+$LOAD_PATH << File.expand_path('../', __FILE__)
+
+require 'op/basic_operation'
+require 'op/add'
+require 'op/sub'
+require 'op/mul'
+require 'op/div'
+
 module Konbu
   class OP
     attr_accessor :value

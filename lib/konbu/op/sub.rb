@@ -1,3 +1,5 @@
+require File.expand_path('../basic_operation', __FILE__)
+
 module Konbu
   class Sub < BasicOperation
     def initialize

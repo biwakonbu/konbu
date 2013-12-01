@@ -1,7 +1,7 @@
-#bin_path = File.expand_path(File.dirname($0))
-#$LOAD_PATH << bin_path unless $LOAD_PATH.include?(bin_path)
+bin_path = File.expand_path('../../lib', __FILE__)
+$LOAD_PATH << bin_path unless $LOAD_PATH.include?(bin_path)
 
-require_relative '../lib/konbu'
+require 'konbu'
 
 parse = Konbu::Parser.new(ARGV[0])
 parse.run
