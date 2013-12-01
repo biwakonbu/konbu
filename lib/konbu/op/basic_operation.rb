@@ -12,7 +12,7 @@ module Konbu
     def push(object)
       case object
       when String
-        if /[0-9]+\.[0-9]+/ == object
+        if /[0-9]+\.[0-9]+/ =~ object
           @stack << object.to_f
         else
           @stack << object.to_i
