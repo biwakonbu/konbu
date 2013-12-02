@@ -19,35 +19,13 @@ describe Konbu::BasicOperation do
       end
     end
 
-    context 'when object is Add class' do
-      it 'stack[-1] is Konbu::Add class object' do
-        add = Konbu::Add.new
-        bop.push(add)
-        expect(bop.stack[-1].class).to eq(Konbu::Add)
-      end
-    end
-
-    context 'when object is Sub class' do
-      it 'stack[-1] is Konbu::Sub class object' do
-        sub = Konbu::Sub.new
-        bop.push(sub)
-        expect(bop.stack[-1].class).to eq(Konbu::Sub)
-      end
-    end
-
-    context 'when object is Mul class' do
-      it 'stack[-1] is Konbu::Mul class object' do
-        mul = Konbu::Mul.new
-        bop.push(mul)
-        expect(bop.stack[-1].class).to eq(Konbu::Mul)
-      end
-    end
-
-    context 'when object is Div class' do
-      it 'stack[-1] is Konbu::Div class object' do
-        div = Konbu::Div.new
-        bop.push(div)
-        expect(bop.stack[-1].class).to eq(Konbu::Div)
+    for klass in [Konbu::Add, Konbu::Sub, Konbu::Mul, Konbu::Div]
+      context "when object is #{klass} class" do
+        it "stack[-1] is #{klass} class object" do
+          object = klass.new
+          bop.push(object)
+          expect(bop.stack[-1].class).to eq(klass)
+        end
       end
     end
   end
